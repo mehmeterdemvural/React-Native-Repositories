@@ -1,17 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react';
 
+import {SafeAreaView, Platform, StyleSheet} from 'react-native';
+import MapView, {Marker, enableLatestRenderer} from 'react-native-maps';
 import {PERMISSIONS, RESULTS, request} from 'react-native-permissions';
 import Geolocation from 'react-native-geolocation-service';
-
-import {SafeAreaView, Platform, StyleSheet} from 'react-native';
-
-import MapView, {Marker} from 'react-native-maps';
 
 import useFetch from './hooks/useFetch.js';
 import Loading from './components/Loading/Loading.jsx';
 import CustomMarker from './components/Marker/CustomMarker.jsx';
 import InfoCard from './components/cards/InfoCard';
-
+enableLatestRenderer();
 const App = () => {
   const {data, loading} = useFetch(
     'https://random-data-api.com/api/v2/users?size=50',
@@ -73,8 +71,8 @@ const App = () => {
     mapRef.current.animateToRegion({
       latitude: coor.lat,
       longitude: coor.lng,
-      latitudeDelta: 0.4922,
-      longitudeDelta: 0.4421,
+      latitudeDelta: 0.1,
+      longitudeDelta: 0.1,
     });
   };
 
@@ -89,25 +87,26 @@ const App = () => {
       if (result === RESULTS.GRANTED) {
         Geolocation.getCurrentPosition(
           position => {
+            console.log('position', position);
             setLocation({
               latitude: position?.coords?.latitude,
               longitude: position?.coords?.longitude,
               latitudeDelta: 0.1,
               longitudeDelta: 0.1,
             });
-            setInitialLoading(false);
           },
           err => {
-            setInitialLoading(false);
             console.log(err.code, err.message);
           },
           {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
         );
       }
     });
+    setInitialLoading(false);
   }, [initialLoading]);
+
   if (initialLoading) {
-    return <Loading />;
+    return <Loading key={1} />;
   }
   return (
     <SafeAreaView style={style.container}>
@@ -116,13 +115,13 @@ const App = () => {
         style={style.container}
         ref={mapRef}
         initialRegion={location}>
-        <Marker coordinate={location} title="You are here" />
+        {location && <Marker coordinate={location} title="You are here" />}
         {data && renderUserMarker()}
       </MapView>
       {user && (
         <InfoCard visible={modalVisible} close={handleModal} user={user} />
       )}
-      {loading && <Loading />}
+      {loading && <Loading key={2} />}
     </SafeAreaView>
   );
 };
