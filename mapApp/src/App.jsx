@@ -87,8 +87,7 @@ const App = () => {
       if (result === RESULTS.GRANTED) {
         Geolocation.getCurrentPosition(
           position => {
-            console.log('position', position);
-            setLocation({
+            return setLocation({
               latitude: position?.coords?.latitude,
               longitude: position?.coords?.longitude,
               latitudeDelta: 0.1,

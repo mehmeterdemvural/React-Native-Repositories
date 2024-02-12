@@ -9,7 +9,6 @@ const useFetch = url => {
   const fetchData = useCallback(async () => {
     try {
       const {data: response} = await axios(url);
-      console.log(response);
       setData(response);
       setLoading(false);
     } catch (err) {
