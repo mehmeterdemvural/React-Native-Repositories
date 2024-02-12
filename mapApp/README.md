@@ -1,6 +1,6 @@
 # Map App
 
-In this application developed with React Native, the current location of the device is obtained and displayed on the map. In addition, the locations of people coming from the fake API are marked on the map along with their profile photos. When you click on a persongit o's profile photo, the map focuses on that person and a card containing the person's information becomes visible.
+In this application developed with React Native, the current location of the device is obtained and displayed on the map. In addition, the locations of people coming from the fake API are marked on the map along with their profile photos. When you click on a person's profile photo, the map focuses on that person and a card with the person's information becomes visible.
 
 ## Preview
 
