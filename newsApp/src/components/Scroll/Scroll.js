@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ScrollView} from 'react-native';
+import {Image, ScrollView, Text, View} from 'react-native';
 import new_banner_data from '../../data/news_banner_data.json';
 import styles from './Scroll.style';
 

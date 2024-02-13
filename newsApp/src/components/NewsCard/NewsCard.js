@@ -2,11 +2,12 @@ import React from 'react';
 import {Text, View, Image, TouchableWithoutFeedback} from 'react-native';
 import styles from './NewsCard.style';
 
-function NewsCard({news}) {
+function NewsCard({news, navigation}) {
   return (
     <TouchableWithoutFeedback
       onPress={() => {
         console.log(news.id);
+        navigation.navigate('Details', {news});
       }}>
       <View style={styles.container}>
         <Image style={styles.image} source={{uri: news.imageURL}} />
