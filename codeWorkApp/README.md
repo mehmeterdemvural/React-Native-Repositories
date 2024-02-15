@@ -4,7 +4,7 @@ In this application developed with React Native, the current location of the dev
 
 ## Preview
 
-![Map App Preview](./assets/ios.gif)
+![Map App Preview](./src/assets/ios.gif)
 
 ### Used Technologies
 
