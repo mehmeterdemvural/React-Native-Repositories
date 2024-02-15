@@ -12,7 +12,9 @@ const FavoriteProvider = ({children}) => {
       .then(data => {
         data && setFavorite(JSON.parse(data));
       })
-      .then(setIsFavoriteLoading(false));
+      .then(() => {
+        setIsFavoriteLoading(false);
+      });
   }, []);
 
   useEffect(() => {

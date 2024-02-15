@@ -1,11 +1,13 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useState, useEffect, createContext, useContext} from 'react';
 
+import database from '@react-native-firebase/database';
+
 const SubmitContext = createContext();
 
 function SubmitProvider({children}) {
   const [subValues, setSubValues] = useState([]);
-  const [isSubLoading, setIsSubLoading] = useState();
+  const [isSubLoading, setIsSubLoading] = useState(true);
 
   const editSub = (job, findIsSubmit) => {
     if (!findIsSubmit) {

@@ -1,36 +1,22 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import {Formik} from 'formik';
-import {showMessage} from 'react-native-flash-message';
-import auth from '@react-native-firebase/auth';
 
-import authErrorMessageParser from '../../utils/authErrorMessageParser';
 import {styles} from './Signin.styles';
 import {signinSchema} from './SigninValidations';
+
+import {useAuth} from '../../contexts/AuthContext';
 
 const initialValues = {
   email: '',
   password: '',
 };
 
-function Signin() {
+function Signin({navigation}) {
+  const {signin} = useAuth();
+
   const handleSigninSubmit = async values => {
-    try {
-      await auth().signInWithEmailAndPassword(values.email, values.password);
-    } catch (error) {
-      showMessage({
-        message: 'ERROR',
-        description: authErrorMessageParser(error.code),
-        type: 'success',
-        duration: 5000,
-        floating: true,
-        statusBarHeight: 50,
-        backgroundColor: '#F5E9CF',
-        titleStyle: {color: '#E96479'},
-        textStyle: {color: '#4D455D'},
-      });
-      console.log(error.code);
-    }
+    signin(values.email, values.password);
   };
 
   return (
@@ -62,6 +48,8 @@ function Signin() {
                 onBlur={handleBlur('email')}
                 value={values.email}
                 style={styles.input}
+                autoCapitalize="none"
+                keyboardType="email-address"
               />
             </View>
 
@@ -80,6 +68,8 @@ function Signin() {
                 value={values.password}
                 style={styles.input}
                 secureTextEntry
+                autoCapitalize="none"
+                keyboardType="number-pad"
               />
             </View>
 
@@ -87,6 +77,18 @@ function Signin() {
               onPress={handleSubmit}
               style={styles.buttonContainer}>
               <Text style={styles.buttonText}>Sign In</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+              <Text
+                style={{
+                  textAlign: 'right',
+
+                  textDecorationLine: 'underline',
+                  color: '#4D455D',
+                  fontSize: 12,
+                }}>
+                Not registered? Click to register.
+              </Text>
             </TouchableOpacity>
           </>
         )}

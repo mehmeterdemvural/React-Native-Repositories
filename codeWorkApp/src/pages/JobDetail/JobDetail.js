@@ -10,7 +10,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RenderHTML from 'react-native-render-html';
 
 import useFetch from '../../hooks/useFetch';
-import {API_URL} from '@env';
 import {styles} from './JobDetail.styles';
 import LoadingPage from '../../components/LoadingPage';
 import ErrorPage from '../../components/ErrorPage';
@@ -26,7 +25,7 @@ function JobDetail({navigation, route}) {
   const jobId = route.params;
 
   useEffect(() => {
-    workFetch(`${API_URL}/${jobId}`);
+    workFetch(`https://www.themuse.com/api/public/jobs/${jobId}`);
   }, []);
 
   if (fetchLoading) {

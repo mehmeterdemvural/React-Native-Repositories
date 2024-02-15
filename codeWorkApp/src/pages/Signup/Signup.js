@@ -4,6 +4,9 @@ import {Formik} from 'formik';
 import {showMessage} from 'react-native-flash-message';
 import auth from '@react-native-firebase/auth';
 
+// Contexts
+import {useAuth} from '../../contexts/AuthContext';
+
 import authErrorMessageParser from '../../utils/authErrorMessageParser';
 import {styles} from './Signup.styles';
 import {signupSchema} from './SignupValidations';
@@ -14,48 +17,13 @@ const initialValues = {
   confirmPassword: '',
 };
 
-function Signup({navigation}) {
+function Signup() {
+  const {signup} = useAuth();
+
   const handleSignupSubmit = async values => {
-    if (values.password !== values.confirmPassword) {
-      showMessage({
-        message: 'Passwords not match !',
-        type: 'success',
-        duration: 3000,
-        floating: true,
-        statusBarHeight: 50,
-        backgroundColor: '#F5E9CF',
-        titleStyle: {color: '#E96479'},
-        textStyle: {color: '#4D455D'},
-      });
-      return;
-    }
     try {
-      await auth().createUserWithEmailAndPassword(
-        values.email,
-        values.password,
-      );
-      showMessage({
-        message: 'User created',
-        type: 'success',
-        duration: 3000,
-        floating: true,
-        statusBarHeight: 50,
-        backgroundColor: '#F5E9CF',
-        titleStyle: {color: '#E96479'},
-        textStyle: {color: '#4D455D'},
-      });
-      navigation.navigate('Signin');
+      await signup(values.email, values.password);
     } catch (error) {
-      showMessage({
-        message: authErrorMessageParser(error.code),
-        type: 'success',
-        duration: 3000,
-        floating: true,
-        statusBarHeight: 50,
-        backgroundColor: '#F5E9CF',
-        titleStyle: {color: '#E96479'},
-        textStyle: {color: '#4D455D'},
-      });
       console.log(error.code);
     }
   };
@@ -88,6 +56,9 @@ function Signup({navigation}) {
                 onBlur={handleBlur('email')}
                 value={values.email}
                 style={styles.input}
+                keyboardType="email-address"
+                inputMode="email"
+                autoCapitalize="none"
               />
             </View>
 
@@ -106,6 +77,7 @@ function Signup({navigation}) {
                 value={values.password}
                 style={styles.input}
                 secureTextEntry
+                keyboardType="number-pad"
               />
             </View>
 
@@ -124,6 +96,7 @@ function Signup({navigation}) {
                 value={values.confirmPassword}
                 style={styles.input}
                 secureTextEntry
+                keyboardType="number-pad"
               />
             </View>
 

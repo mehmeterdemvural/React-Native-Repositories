@@ -1,8 +1,15 @@
 import React from 'react';
-import Lottie from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 
 function ErrorPage() {
-  return <Lottie source={require('../../assets/error.json')} autoPlay loop />;
+  return (
+    <LottieView
+      source={require('../../assets/error.json')}
+      autoPlay
+      loop
+      style={{flex: 1}}
+    />
+  );
 }
 
 export default ErrorPage;

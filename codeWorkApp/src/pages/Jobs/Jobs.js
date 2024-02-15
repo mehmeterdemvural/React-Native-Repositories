@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {View, FlatList, Text} from 'react-native';
+import {View, FlatList, Text, TouchableOpacity} from 'react-native';
 
-import {API_URL} from '@env';
 import {styles} from './Jobs.styles';
 import useFetch from '../../hooks/useFetch';
 import LoadingPage from '../../components/LoadingPage';
@@ -16,8 +15,13 @@ function Jobs({navigation}) {
   const {fetchData, fetchError, fetchLoading, workFetch} = useFetch();
   const [page, setPage] = useState(1);
 
+  const handleLoadMore = data => {
+    setPage(prev => prev + data);
+    workFetch(`https://www.themuse.com/api/public/jobs?page=${page}`);
+  };
+
   useEffect(() => {
-    workFetch(`${API_URL}?page=${page}`);
+    workFetch(`https://www.themuse.com/api/public/jobs?page=${page}`);
   }, []);
 
   const renderJobs = ({item}) => {
@@ -40,6 +44,26 @@ function Jobs({navigation}) {
         data={fetchData.results}
         renderItem={renderJobs}
         contentContainerStyle={{paddingBottom: 50, paddingTop: 5}}
+        keyExtractor={item => item.id.toString()}
+        ListFooterComponent={
+          <View style={styles.footer}>
+            <TouchableOpacity
+              disabled={page <= 1}
+              onPress={() => {
+                handleLoadMore(-1);
+              }}
+              style={styles.pageBtn}>
+              <Text style={styles.pageBtnText}>Previous Page</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                handleLoadMore(+1);
+              }}
+              style={styles.pageBtn}>
+              <Text style={styles.pageBtnText}>Next Page</Text>
+            </TouchableOpacity>
+          </View>
+        }
       />
     </View>
   );

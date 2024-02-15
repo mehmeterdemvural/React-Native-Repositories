@@ -17,10 +17,12 @@ function JobsCard({jobs, handlePress}) {
         <Text style={styles.header}>{jobs.name}</Text>
         <View style={styles.innerContainer}>
           <Text style={styles.title}>Category</Text>
-          <Text style={styles.item}>: {jobs.categories[0] ? jobs.categories[0].name : 'Unknown'}</Text>
+          <Text style={styles.item}>
+            : {jobs.categories[0] ? jobs.categories[0].name : 'Unknown'}
+          </Text>
         </View>
         <View style={styles.innerContainer}>
-          <Text style={styles.title}>Conpany</Text>
+          <Text style={styles.title}>Company</Text>
           <Text style={styles.item}>: {jobs.company.name}</Text>
         </View>
         <View style={styles.innerContainer}>

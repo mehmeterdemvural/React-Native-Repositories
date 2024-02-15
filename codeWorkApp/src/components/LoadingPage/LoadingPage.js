@@ -1,8 +1,15 @@
 import React from 'react';
-import Lottie from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 
 function LoadingPage() {
-  return <Lottie source={require('../../assets/loading.json')} autoPlay loop />;
+  return (
+    <LottieView
+      source={require('../../assets/loading.json')}
+      autoPlay
+      loop
+      style={{flex: 1}}
+    />
+  );
 }
 
 export default LoadingPage;

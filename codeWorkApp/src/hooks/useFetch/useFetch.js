@@ -8,6 +8,7 @@ function useFetch() {
 
   const workFetch = async url => {
     try {
+      setFetchLoading(true);
       await axios.get(url).then(res => {
         if (res.data) {
           setFetchData(res.data);
