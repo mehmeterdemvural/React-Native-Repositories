@@ -6,7 +6,7 @@ import {
   Dimensions,
   ScrollView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import RenderHTML from 'react-native-render-html';
 
 import useFetch from '../../hooks/useFetch';
@@ -91,7 +91,7 @@ function JobDetail({navigation, route}) {
           <View style={styles.buttonInnerContainer}>
             <Icon
               style={!findIsSubmit ? styles.buttonIcon : styles.buttonFav}
-              name={'login'}
+              name={'done'}
               size={20}
             />
             <Text style={styles.buttonText}>
@@ -103,7 +103,7 @@ function JobDetail({navigation, route}) {
           <View style={styles.buttonInnerContainer}>
             <Icon
               style={!findIsFavorite ? styles.buttonIcon : styles.buttonFav}
-              name={'heart'}
+              name={'favorite'}
               size={20}
             />
             <Text style={styles.buttonText}>

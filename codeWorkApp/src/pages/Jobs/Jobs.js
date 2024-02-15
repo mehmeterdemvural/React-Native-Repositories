@@ -8,10 +8,12 @@ import ErrorPage from '../../components/ErrorPage';
 import JobsCard from '../../components/JobsCard';
 import {useFavoriteContext} from '../../contexts/FavoriteContext';
 import {useSubmitContext} from '../../contexts/SubmitContext';
+import {useAuth} from '../../contexts/AuthContext';
 
 function Jobs({navigation}) {
   const {isFavoriteLoading} = useFavoriteContext();
   const {isSubLoading} = useSubmitContext();
+  const {initialLoading} = useAuth();
   const {fetchData, fetchError, fetchLoading, workFetch} = useFetch();
   const [page, setPage] = useState(1);
 

@@ -89,10 +89,7 @@ function DravNav() {
 }
 
 function App() {
-  const {user, initialLoading} = useAuth();
-  if (initialLoading) {
-    return null;
-  }
+  const {user} = useAuth();
 
   return (
     <NavigationContainer>

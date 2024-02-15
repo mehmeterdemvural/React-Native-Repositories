@@ -4,7 +4,7 @@ import {showMessage} from 'react-native-flash-message';
 
 import auth from '@react-native-firebase/auth';
 
-import authErrorMessageParser from '../../utils/authErrorMessageParser';
+import LoadingPage from '../../components/LoadingPage';
 
 const AuthContext = createContext();
 
@@ -28,10 +28,6 @@ const AuthProvider = ({children}) => {
 
     bootstrapAsync();
   }, []);
-
-  useEffect(() => {
-    console.log('user', user);
-  }, [user]);
 
   const signin = async (email, password, redirect = false) => {
     try {
@@ -95,7 +91,6 @@ const AuthProvider = ({children}) => {
 
   const logout = () => {
     try {
-      console.log('logout');
       auth()
         .signOut()
         .then(() => {
@@ -114,6 +109,11 @@ const AuthProvider = ({children}) => {
     signup,
     logout,
   };
+
+  if (initialLoading) {
+    return <LoadingPage />;
+  }
+
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 

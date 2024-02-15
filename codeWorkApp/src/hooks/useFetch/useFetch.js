@@ -12,10 +12,10 @@ function useFetch() {
       await axios.get(url).then(res => {
         if (res.data) {
           setFetchData(res.data);
-          setFetchLoading(false);
         } else {
           reject();
         }
+        setFetchLoading(false);
       });
     } catch (err) {
       setFetchError(true);

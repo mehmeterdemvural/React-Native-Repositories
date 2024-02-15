@@ -20,10 +20,16 @@ const styles = StyleSheet.create({
   title: {flex: 1, fontWeight: 'bold', color: '#E96479', fontSize: 13},
   item: {color: '#4D455D', flex: 3, fontWeight: 'bold', fontSize: 13},
   bottomContainer: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 2,
-    alignContent: 'center',
+    alignItems: 'center',
+  },
+  bottomInnerContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   level: {
     color: '#E96479',
@@ -32,21 +38,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   buttonIcon: {
-    color: '#F5E9CF',
-    marginRight: 5,
-    alignSelf: 'flex-end',
-    fontWeight: 'bold',
-  },
-  buttonFav: {
     color: '#E96479',
-    marginRight: 5,
-    alignSelf: 'flex-end',
     fontWeight: 'bold',
-  },
-  iconText: {
-    fontSize: 12,
-    alignSelf: 'flex-end',
-    fontWeight: 'bold',
+    justifyContent: 'flex-end',
   },
 });
 

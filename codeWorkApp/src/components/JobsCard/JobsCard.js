@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableWithoutFeedback} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {styles} from './JobsCard.styles';
 import {useFavoriteContext} from '../../contexts/FavoriteContext';
@@ -30,19 +30,33 @@ function JobsCard({jobs, handlePress}) {
           <Text style={styles.item}>: {jobs.locations[0].name}</Text>
         </View>
         <View style={styles.bottomContainer}>
-          <Icon
-            style={!findIsFavorite ? styles.buttonIcon : styles.buttonFav}
-            name={'heart'}
-            size={12}>
-            <Text style={styles.iconText}>inFav</Text>
-          </Icon>
-          <Icon
-            style={!findIsSubmit ? styles.buttonIcon : styles.buttonFav}
-            name={'login-variant'}
-            size={12}>
-            <Text style={styles.iconText}>Applied</Text>
-          </Icon>
-          <Text style={styles.level}>{jobs.levels[0].name}</Text>
+          <View style={styles.bottomInnerContainer}>
+            {findIsFavorite ? (
+              <>
+                <Icon
+                  style={findIsFavorite && styles.buttonIcon}
+                  name="favorite"
+                  size={12}
+                />
+                <Text style={styles.iconText}>inFav</Text>
+              </>
+            ) : null}
+          </View>
+          <View style={styles.bottomInnerContainer}>
+            {findIsSubmit ? (
+              <>
+                <Icon
+                  style={findIsSubmit && styles.buttonIcon}
+                  name="done"
+                  size={12}
+                />
+                <Text style={styles.iconText}>Applied</Text>
+              </>
+            ) : null}
+          </View>
+          <View>
+            <Text style={styles.level}>{jobs.levels[0].name}</Text>
+          </View>
         </View>
       </View>
     </TouchableWithoutFeedback>

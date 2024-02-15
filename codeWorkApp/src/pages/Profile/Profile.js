@@ -23,6 +23,7 @@ const Profile = () => {
       width: Dimensions.get('window').width / 1.4,
       borderRadius: 10,
       backgroundColor: '#7DB9B6',
+      marginBottom: 40,
     },
     logoutBtn: {
       padding: 10,
