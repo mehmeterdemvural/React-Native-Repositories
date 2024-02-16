@@ -12,7 +12,11 @@ When the application is logged in, a notification is sent to the user using [Rea
 
 After this, a [Drawer Navigation](https://reactnavigation.org/) structure greets us in the application. The first page that opens is the page containing all job postings. FlatList is used on this page and the first part of the data taken from [The Muse API](https://www.themuse.com/developers/api/v2) is shown. There are buttons at the bottom of the page that will direct you to pages containing other advertisements. When these buttons are clicked, other data is taken from the API and shown to the user. When the user clicks on these advertisements, the user is directed to the advertisement page. On this page, the user can apply to the job posting or favorite the posting. When the user applies to a job posting or favorites a job posting, that job posting is added to the relevant pages in Drawer Navigation. Additionally, there is a sign on the home page indicating that an application has been made to that job posting or that the job posting has been added to favorites. By entering the job posting, the user can withdraw his application and remove the job posting from his favorites. Since all of these transactions are recorded, the relevant transactions are not lost when the application is closed and opened.
 
+While data is being pulled from the API and an error is encountered, Loading and Error animations are shown using [Lottie React Native](https://www.npmjs.com/package/lottie-react-native).
+
 Finally, user information can be accessed and the logout process can be configured from the Profile page in Drawer Navigation.
+
+> **Note**: This application uses [Firebase](https://firebase.google.com/) as its database. If you encounter an Error animation when you install the application, you will probably need to re-do the Firebase integration.
 
 ## Preview
 
