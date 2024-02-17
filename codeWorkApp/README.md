@@ -28,6 +28,7 @@ Finally, user information can be accessed and the logout process can be configur
 - [Firebase (App - Auth - Database)](https://firebase.google.com/)
 - [Formik](https://www.npmjs.com/package/formik)
 - [Lottie React Native](https://www.npmjs.com/package/lottie-react-native)
+- [React Context](https://react.dev/learn/passing-data-deeply-with-context)
 - [React Native](https://reactnative.dev/)
 - [React Native Async Storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
 - [React Native Flash Message](https://www.npmjs.com/package/react-native-flash-message)
