@@ -1,22 +1,16 @@
-# Code Work App
+# To Do App
 
 ## Description
 
-In this application developed with React Native, a job posting application is simulated.
+In this application developed with React Native, a to-do list application is simulated.
 
-You must register to use the application. Therefore, the application opens with the login page. If you are not registered, there is a link that will take you to the registration page. These connections are made using [Stack Navigation](https://reactnavigation.org/).
+It is not necessary to register and log in to use the application. The application does not have any external dependencies.
 
-Data entry during the registration process and login was made using [Formik](https://www.npmjs.com/package/formik). [Yup](https://www.npmjs.com/package/yup) was used in form validation processes. [Firebase Auth](https://firebase.google.com/) was used for registration and login processes.
+When the application is opened, the to do list appears. There is a field at the bottom of the opened page where data can be entered. When data is entered from this field (Empty data entry and re-entering the same data are not allowed, in which case a warning will appear). The data is added to the to do list. At the same time, the corresponding data is also saved on the device using [React Native Async Storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage). Thus, there is no data loss when the application is closed.
 
-When the application is logged in, a notification is sent to the user using [React Native Flash Message](https://www.npmjs.com/package/react-native-flash-message). User information was also saved on the device using [React Native Async Storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage). Thus, the user is automatically logged in every time the application is opened.
+When you click on a to do, the to do is crossed out and its style changes. When clicked again, it returns to its previous state. If you press long on a todo, a warning appears on the screen that the todo will be deleted. If this warning is acknowledged, the to do will be deleted.
 
-After this, a [Drawer Navigation](https://reactnavigation.org/) structure greets us in the application. The first page that opens is the page containing all job postings. FlatList is used on this page and the first part of the data taken from [The Muse API](https://www.themuse.com/developers/api/v2) is shown. There are buttons at the bottom of the page that will direct you to pages containing other advertisements. When these buttons are clicked, other data is taken from the API and shown to the user. When the user clicks on these advertisements, the user is directed to the advertisement page. On this page, the user can apply to the job posting or favorite the posting. When the user applies to a job posting or favorites a job posting, that job posting is added to the relevant pages in Drawer Navigation. Additionally, there is a sign on the home page indicating that an application has been made to that job posting or that the job posting has been added to favorites. By entering the job posting, the user can withdraw his application and remove the job posting from his favorites. Since all of these transactions are recorded, the relevant transactions are not lost when the application is closed and opened.
-
-While data is being pulled from the API and an error is encountered, Loading and Error animations are shown using [Lottie React Native](https://www.npmjs.com/package/lottie-react-native).
-
-Finally, user information can be accessed and the logout process can be configured from the Profile page in Drawer Navigation.
-
-> **Note**: This application uses [Firebase](https://firebase.google.com/) as its database. If you encounter an Error animation when you install the application, you will probably need to re-do the Firebase integration.
+As data is pulled from storage, loading animations are shown using [Lottie React Native](https://www.npmjs.com/package/lottie-react-native).
 
 ## Preview
 
@@ -25,6 +19,7 @@ Finally, user information can be accessed and the logout process can be configur
 ### Used Technologies
 
 - [Lottie React Native](https://www.npmjs.com/package/lottie-react-native)
+- [React](https://react.dev/)
 - [React Native](https://reactnative.dev/)
 - [React Native Async Storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
 
