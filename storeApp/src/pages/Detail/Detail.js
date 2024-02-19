@@ -22,7 +22,6 @@ function Detail({route}) {
   return (
     <View styles={styles.container}>
       <Image style={styles.image} source={{uri: fetchData.image}} />
-
       <ScrollView style={styles.bodyContainer}>
         <Text style={styles.title}>{fetchData.title}</Text>
         <Text style={styles.description}>

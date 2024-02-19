@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     width: 100,
     minHeight: 100,
     borderRadius: 5,
-    resizeMode: 'center',
+    resizeMode: 'contain',
+    backgroundColor: 'white',
   },
   bodyContainer: {
     flex: 1,
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     fontSize: 15,
     fontStyle: 'italic',
-    color: '#DC8449'
+    color: '#DC8449',
   },
 });
 export {styles};

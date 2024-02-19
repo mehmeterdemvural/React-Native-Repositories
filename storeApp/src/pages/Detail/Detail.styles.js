@@ -5,8 +5,9 @@ const styles = StyleSheet.create({
   image: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height / 3,
-    resizeMode: 'center',
+    resizeMode: 'contain',
     borderRadius: 10,
+    backgroundColor: 'white',
   },
   bodyContainer: {padding: 10},
   title: {
