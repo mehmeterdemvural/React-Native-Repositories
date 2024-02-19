@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import YoutubeIframe from 'react-native-youtube-iframe';
+
 import {styles} from './Detail.styles';
 import useFetch from '../../hooks/useFetch';
 import {REACT_APP_API_URL} from '@env';
@@ -35,6 +37,7 @@ function Detail({route}) {
   return (
     <ScrollView style={styles.container}>
       <Image source={{uri: meal.strMealThumb}} style={styles.image} />
+      {/* <YoutubeIframe videoId={url.split('=')[1]} height={250} /> */}
       <Text style={styles.title}>{meal.strMeal}</Text>
       <Text style={styles.area}>{meal.strArea}</Text>
       <View style={styles.divider} />
