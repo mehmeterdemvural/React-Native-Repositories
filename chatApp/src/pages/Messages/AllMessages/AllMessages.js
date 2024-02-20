@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {View} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 import database from '@react-native-firebase/database';
 
 import {styles} from './AllMessages.styles';
 import parseContentData from '../../../utils/parseContentData';
-import EmptyMessage from '../../../components/EmptyMessage';
 import Loading from '../../../components/Loading';
 import {useAuth} from '../../../contexts/AuthContext';
 import Message from '../../../components/Message';
@@ -48,9 +47,9 @@ function AllMessages() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Message content={contentList} submittedMessage={handleSendContent} />
-    </View>
+    </SafeAreaView>
   );
 }
 

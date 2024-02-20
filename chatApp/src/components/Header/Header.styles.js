@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#4D455D',
     backgroundColor: '#7DB9B6',
-    paddingTop: 30,
+    paddingTop: 50,
   },
   leftInnerContainer: {width: 50},
   centerInnerContainer: {flex: 1, alignItems: 'center'},

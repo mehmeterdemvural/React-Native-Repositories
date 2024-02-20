@@ -31,6 +31,7 @@ const TabNavigation = () => {
         tabBarActiveBackgroundColor: '#4D455D',
         tabBarInactiveBackgroundColor: '#F5E9CF',
         tabBarHideOnKeyboard: true,
+        tabBarStyle: {backgroundColor: '#7DB9B6'},
       }}>
       <Tab.Screen
         name="AllMessagesPage"
