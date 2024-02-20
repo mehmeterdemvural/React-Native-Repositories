@@ -7,6 +7,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -43,6 +45,7 @@ const Profile = ({navigation}) => {
   return (
     <SafeAreaView>
       <Text>Profile</Text>
+      <Icon name="home" size={30} />
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
     </SafeAreaView>
   );
