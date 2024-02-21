@@ -20,7 +20,7 @@ When the application is logged in, a notification is sent to the user using [Rea
 
 | Message Preview                         | Message Preview                         |
 | --------------------------------------- | --------------------------------------- |
-| Iphone XS                               | Iphone 15                               |
+| Iphone SE                               | Iphone 15                               |
 | ![Map App Preview](./src/assets/xs.gif) | ![Map App Preview](./src/assets/15.gif) |
 
 When the application is opened, we are greeted by the [Tab Navigation](https://reactnavigation.org/) structure. The first page that opens is the page containing all general messages. This page is similar to X (formerly Twitter). Anyone registered with the application can send messages to this section. All users can view this message simultaneously. A custom FlatList is used on this page.
