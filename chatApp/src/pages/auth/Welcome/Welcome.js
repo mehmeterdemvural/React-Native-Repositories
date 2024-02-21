@@ -16,9 +16,9 @@ function Welcome({navigation}) {
         />
       </View>
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Welcome to Hasbihal !</Text>
+        <Text style={styles.title}>Welcome to Chat App !</Text>
         <Text style={styles.text}>
-          If you have an account with Hasbihal, please login, otherwise please
+          If you have an account with Chat App, please login, otherwise please
           register.
         </Text>
       </View>

@@ -82,8 +82,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   imageBox: {
+    alignSelf: 'center',
     marginTop: 20,
-    height: '100%',
+    height: 150,
+    width: 150,
+    borderRadius: 75,
   },
 });
 

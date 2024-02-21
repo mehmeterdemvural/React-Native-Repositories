@@ -70,7 +70,7 @@ function ProfilePhoto({props}) {
           <Image
             source={{uri: image}}
             style={styles.imageBox}
-            resizeMode={'center'}
+            resizeMode="cover"
           />
         ) : props.profileValues.gender == 'male' ? (
           <Lottie
