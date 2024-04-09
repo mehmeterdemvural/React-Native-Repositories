@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1070000729396",
-    "project_id": "codeworkapp-5d3e6",
-    "storage_bucket": "codeworkapp-5d3e6.appspot.com"
+    "project_number": "20651077067",
+    "project_id": "code-work-app",
+    "storage_bucket": "code-work-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1070000729396:android:a52db955385e8706ecc961",
+        "mobilesdk_app_id": "1:20651077067:android:b4e892b03fcee8d0045a4e",
         "android_client_info": {
           "package_name": "com.codeworkapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDAM72gsuvRIqoWs9gQjF-lDLTtpyyz9iA"
+          "current_key": "AIzaSyAfJq7pz-br9Bffori_oSAeBbFsw5fsCqc"
         }
       ],
       "services": {

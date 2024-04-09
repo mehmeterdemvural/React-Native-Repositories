@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
-import {ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {
+  ScrollView,
+  TouchableWithoutFeedback,
+  Keyboard,
+  KeyboardAvoidingView,
+} from 'react-native';
 import {Formik} from 'formik';
 
 import {styles} from './Signin.styles';

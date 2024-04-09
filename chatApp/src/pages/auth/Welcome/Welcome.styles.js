@@ -24,8 +24,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 10,
+    justifyContent: 'space-around',
   },
   button: {
     justifyContent: 'center',

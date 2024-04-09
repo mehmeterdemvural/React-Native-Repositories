@@ -34,6 +34,8 @@ function Input({
           placeholderTextColor={'#F0A04B'}
           autoCapitalize={autoCapitalize}
           secureTextEntry={isSecure}
+          autoComplete="off"
+          autoCorrect={false}
         />
         <Icon
           name={iconName}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, StatusBar} from 'react-native';
 import Lottie from 'lottie-react-native';
 
 import {styles} from './Welcome.styles';
@@ -7,6 +7,7 @@ import {styles} from './Welcome.styles';
 function Welcome({navigation}) {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={styles.lottieContainer}>
         <Lottie
           source={require('../../../assets/hasbihal.json')}
